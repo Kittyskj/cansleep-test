@@ -164,7 +164,7 @@ def exec_hikka(full_targets, threads, hikka_folder, loot_file, api_key):
             repeat(logging)
         )
 
-    loot = utils.write_loot(snapshots, loot_file, proto='dahua', api_key=api_key)
+    loot = utils.write_loot(snapshots, loot_file, proto='hikka', api_key=api_key)
     if not loot:
         logging.warning('[HIKKA] No loot. Try to change targets/ports/protocol.')
 
