@@ -148,7 +148,8 @@ def dtfilename():
     return str(datetime.now()).replace(':', '-').split('.')[0].replace(' ', '_')
 
 def create_folder(path: Path):
-    path.mkdir(parents=True)
+    # Allow repeated calls without errors by creating parents and ignoring existing paths.
+    path.mkdir(parents=True, exist_ok=True)
 
 def create_file(path: Path):
     path.touch()
